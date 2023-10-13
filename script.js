@@ -80,7 +80,7 @@ const roll=()=>{
 
 
 const checkWin=()=>{
-   return totalScore[activePlayer]>=10?true:false;
+   return totalScore[activePlayer]>=100?true:false;
 }
 
 const winDisplay=()=>{
