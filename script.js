@@ -22,6 +22,15 @@ const player1El=document.querySelector('.player--1');
 const btnNew=document.querySelector('.btn--new');
 const btnRoll=document.querySelector('.btn--roll');
 const btnHold=document.querySelector('.btn--hold');
+const btnRule=document.querySelector('.btn--rule');
+const btnCloseRule=document.querySelector('.close--rule');
+const btnCloseWinner=document.querySelector('.close--winner');
+
+
+const rule=document.querySelector('.rule');
+const winner=document.querySelector('.winner');
+const winnerPlayer=document.querySelector('.winner--player');
+const overlay=document.querySelector('.overlay');
 
 let currentScore, totalScore,activePlayer;
 
@@ -76,6 +85,7 @@ const checkWin=()=>{
 
 const winDisplay=()=>{
     document.querySelector(`.player--${activePlayer}`).classList.add('player--winner');
+    showWinner();
 }
 
 const hold=()=>{
@@ -96,5 +106,36 @@ btnRoll.addEventListener('click',roll);
 btnHold.addEventListener('click',hold);
 
 btnNew.addEventListener('click',initialGame);
+
+
+const showRule=()=>{
+    rule.classList.remove('hidden');
+    overlay.classList.remove('hidden');
+}
+
+const closeRule=()=>{
+    rule.classList.add('hidden');
+    overlay.classList.add('hidden');
+}
+
+
+const showWinner=()=>{
+    winnerPlayer.textContent=`玩家${activePlayer+1}`;
+    winner.classList.remove('hidden');
+    overlay.classList.remove('hidden');
+}
+
+const closeWinner=()=>{
+    winner.classList.add('hidden');
+    overlay.classList.add('hidden');
+}
+
+btnRule.addEventListener('click',showRule);
+btnCloseRule.addEventListener('click',closeRule);
+
+btnCloseWinner.addEventListener('click',closeWinner);
+
+
+
 
 

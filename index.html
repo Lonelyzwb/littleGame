@@ -1,35 +1,51 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <link rel="stylesheet" href="style.css" />
-    <title>Pig Game</title>
+    <title>双人小游戏!</title>
   </head>
   <body>
     <main>
       <section class="player player--0 player--active">
-        <h2 class="name" id="name--0">Player 1</h2>
+        <h2 class="name" id="name--0">玩家 1</h2>
         <p class="score" id="score--0">43</p>
         <div class="current">
-          <p class="current-label">Current</p>
+          <p class="current-label">当前分数</p>
           <p class="current-score" id="current--0">0</p>
         </div>
       </section>
       <section class="player player--1">
-        <h2 class="name" id="name--1">Player 2</h2>
+        <h2 class="name" id="name--1">玩家 2</h2>
         <p class="score" id="score--1">24</p>
         <div class="current">
-          <p class="current-label">Current</p>
+          <p class="current-label">当前分数</p>
           <p class="current-score" id="current--1">0</p>
         </div>
       </section>
 
       <img src="dice-5.png" alt="Playing dice" class="dice" />
-      <button class="btn btn--new">🔄 New game</button>
-      <button class="btn btn--roll">🎲 Roll dice</button>
-      <button class="btn btn--hold">📥 Hold</button>
+      <button class="btn btn--new">🔄 新的游戏</button>
+      <button class="btn btn--roll">🎲 摇 色子</button>
+      <button class="btn btn--hold">📥 保留</button>
+      <button class="btn btn--rule">📖 查看规则</button>
+      <div class="rule modal hidden">
+        <button class="close--modal close--rule">&times;</button>
+          <h1 class="title">🎮 游戏规则</h1>
+          <p class="description">2个玩家，每个玩家占有一个回合，在该回合内，你可以选择摇色子或者保留当前分数，先到100分的人获胜！！！
+            <br/>筛子摇到1，当前分数清0，并且到对方玩家回合。    
+          </p>
+      </div>
+      <div class="winner modal hidden">
+        <button class="close--modal close--winner">&times;</button>
+          <h1>🎆 祝贺!</h1>
+          <p class="description">🧑‍🎄 <span class="winner--player">玩家1</span> 赢了！！！</p>
+          <div class="img"><img src="winner.jpg" alt=""></div>
+          
+      </div>
+      <div class="overlay hidden"></div>
     </main>
     <script src="script.js"></script>
   </body>
